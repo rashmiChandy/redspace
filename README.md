@@ -1,6 +1,6 @@
 # redspace
 Angular front end app retrieving Star Wars API consolidated data from a Node/Express app
-# StarwarsFrontend
+# Starwars
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
