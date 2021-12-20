@@ -8,8 +8,14 @@ Created using NodeJS.
 
 ## Deployed Application URL
 
-[1] Frontend:
-[2] Backend:
+[1] Frontend: Deployed using AWS Amplify
+    [a] Landing Page: https://master.d1pjf0xo8r678k.amplifyapp.com/  
+    [b] Star Wars Page: https://master.d1pjf0xo8r678k.amplifyapp.com/people
+[2] Backend: Deployed using Google Cloud Platform - Google Cloud Run
+    [a] Base Url: https://server-5rtj3t4uua-uc.a.run.app
+    [b] Get API: https://server-5rtj3t4uua-uc.a.run.app/api/starwars/people/1
+
+## Sample BACKEND URL : https://server-5rtj3t4uua-uc.a.run.app/api/starwars/people/1
 
 ## Github URL
 Repository URL: https://github.com/rashmiChandy/redspace
