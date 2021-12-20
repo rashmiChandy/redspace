@@ -1,0 +1,39 @@
+$card-background: #424242;
+$card-textColor: white;
+$grey-color: #efefef;
+
+// mat card styling
+.characters-container mat-card{
+    background-color: $card-background;
+    text-align: center;
+    &:hover{
+        background-color: #000000de;
+    }
+    button{
+        background-color:$grey-color;
+    }
+    mat-card-subtitle{
+        color: $card-textColor;
+        font-size: 16px;
+        font-weight: 400;
+    }
+}
+
+
+.spacing{
+    margin: 0.5%
+}
+
+.text-width{
+    width: 60%;
+}
+
+// search box styling
+.field-container{
+    input{
+        color: $card-textColor;
+    }
+    mat-label{
+        color: gold;
+    }
+}

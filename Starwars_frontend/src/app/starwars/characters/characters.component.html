@@ -1,0 +1,35 @@
+<!-- Search box -->
+<div class="characters-container">
+  <div class="spacing field-container">
+    <mat-form-field class="text-width" color="accent" appearance="fill">
+      <mat-label >Search by Character Name</mat-label>
+      <input matInput type="text" [(ngModel)]="searchText">
+      <!-- clear button -->
+      <button *ngIf="searchText" matSuffix mat-icon-button aria-label="Clear" (click)="searchText=''">
+        <mat-icon color="accent">close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
+<!-- List of Characters -->
+  <div class="spacing">
+      <div fxLayout="row wrap" fxLayout.xs="column" >
+        <div class="spacing" fxFlex = "0 0 calc(100% / 5 - 1%)" *ngFor="let character of characterList | customFilter:searchText:'name'" >
+          <mat-card (click)=navigateToDetails(character?.id)>
+            <mat-card-content>
+    
+              <mat-card-title>
+                <button mat-fab color="accent" aria-label="Icon representing the characters">
+                  <mat-icon [ngStyle]= "{'color':character?.color}">{{character?.icon}}</mat-icon>
+                </button>  
+              </mat-card-title>
+
+              <mat-card-subtitle>{{character?.name}}</mat-card-subtitle>
+
+            </mat-card-content>
+          </mat-card>
+        </div>
+
+      </div>
+  </div>
+</div>

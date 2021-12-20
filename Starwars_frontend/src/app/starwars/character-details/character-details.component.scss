@@ -1,0 +1,21 @@
+// Reusing styles by importing
+@import '../characters/characters.component.scss';
+
+.spacing{
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.character-details{
+    h1{
+        color: gold;
+    }
+    h2{
+        font-weight: 500;
+    }
+    mat-card{
+        background: $grey-color;
+        margin-bottom: 10%;
+    }
+
+} 

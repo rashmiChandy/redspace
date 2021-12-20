@@ -1,0 +1,101 @@
+
+<div class="spacing character-details">
+    <!-- Load the JSON Response by using Async pipe -->
+    <ng-container *ngIf="characterDetails | async as details">
+        <h1>{{details?.name}}</h1>
+        <mat-card>
+            <mat-card-content>
+                <!-- Tabs -->
+                <mat-tab-group>
+                    <!-- Ṭab 1 with general information -->
+                    <mat-tab label="General">
+                        <div fxLayout="row" fxLayout.xs="column" > 
+                            <div class="mat-typography" fxFlex = "45%">
+                                <div>
+                                    <h2 class="mat-title">PHYSICAL DESCRIPTION:</h2>
+                               </div>
+                                <p><span class="mat-body-2">Height: </span> {{details?.height}}</p>
+                                <p><span class="mat-body-2">Mass: </span> {{details?.mass}}</p>
+                                <p><span class="mat-body-2">Hair Color: </span> {{details?.haircolor}}</p>
+                                <p><span class="mat-body-2">Skin Color: </span> {{details?.skinColor}}</p>
+                                <p><span class="mat-body-2">Gender: </span> {{details?.gender}}</p>
+                                <p><span class="mat-body-2">Birth Year: </span> {{details?.birthYear}}</p>
+                            </div>
+                            <div class="spacing mat-typography" fxFlex = "45%">
+                               <div>
+                                    <h2 class="mat-title">HOME PLANET:</h2>
+                               </div>
+                                <p><span class="mat-body-2">Title: </span> {{details?.homePlanet?.title}}</p>
+                                <p><span class="mat-body-2">Terrain: </span> {{details?.homePlanet?.terrain}}</p>
+                                <p><span class="mat-body-2">Population: </span> {{details?.homePlanet?.population}}</p>
+                                
+                            </div>
+                        </div>  
+                    </mat-tab>
+                    <!-- Ṭab 2 with Film information -->
+                    <mat-tab label="Films"> 
+                        <div fxLayout="row wrap" fxLayout.xs="column" > 
+                            <div *ngFor="let film of details?.films" class="spacing" fxFlex = "46%">
+                                <mat-accordion>
+
+                                    <mat-expansion-panel (opened)="panelOpenState = true"
+                                                        (closed)="panelOpenState = false">
+                                    <mat-expansion-panel-header>
+                                        <mat-panel-title>
+                                            <p class="mat-body-2">{{film?.title}}</p>
+                                        
+                                        </mat-panel-title>
+                                    </mat-expansion-panel-header>
+                                    <div class="mat-typography" >
+                                        <p><span class="mat-body-2">Director: </span> {{film?.director}}</p>
+                                        <p><span class="mat-body-2">Producers: </span> {{film?.producers}}</p>
+                                        <p><span class="mat-body-2">Release Date: </span> {{film?.releaseDate}}</p>
+                                    </div>
+                                    </mat-expansion-panel>
+                                </mat-accordion>                              
+
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <!-- Ṭab 3 with Species information -->
+                    <mat-tab label="Species">
+                        <div fxLayout="row wrap" fxLayout.xs="column" > 
+                            <ng-container *ngIf="details?.species?.length !=0; else noSpecies">
+                                <div *ngFor="let species of details?.species" class="spacing" fxFlex = "45%">
+                                    <mat-accordion>
+    
+                                        <mat-expansion-panel (opened)="speciesPanelOpenState = true"
+                                                            (closed)="speciesPanelOpenState = false">
+                                        <mat-expansion-panel-header>
+                                            <mat-panel-title>
+                                                <p class="mat-body-2"> {{species?.name}}</p>
+                                            </mat-panel-title>
+                                        </mat-expansion-panel-header>
+                                        <div class="mat-typography">
+                                            <p><span class="mat-body-2">Average Lifespan: </span> {{species?.average_lifespan}}</p>
+                                            <p><span class="mat-body-2">Classification: </span> {{species?.classification}}</p>
+                                            <p><span class="mat-body-2">Language: </span> {{species?.language}}</p>
+                                        </div>
+                                        </mat-expansion-panel>
+                                    </mat-accordion>                              
+                                </div>
+
+                            </ng-container>
+                            <ng-template #noSpecies>
+                                <div class="mat-typography">
+                                    <span class="mat-body-2">No Data Available</span>
+                                </div>
+
+                            </ng-template>
+
+                            
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+                
+            </mat-card-content>
+        </mat-card>
+
+    </ng-container>
+
+</div>

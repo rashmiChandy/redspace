@@ -1,0 +1,37 @@
+<div fxLayout="column">
+  <!-- Header -->
+  <!-- Logo -->
+  <div class="logoContainer">
+    <mat-toolbar color="accent">
+      
+        <div class="logo">
+          <div class="logo-text">
+            RED
+          </div>
+          <div class="logo-subtext">
+            space
+          </div>
+        </div> 
+      
+    </mat-toolbar>
+  </div>
+  <!-- Banner -->
+  <div class="banner">
+    <div >
+      STAR WARS
+    </div>
+    <div>
+      <button mat-button color="accent" (click)="navigate()">EXPLORE STAR WARS UVNIVERSE</button>
+    </div>
+  </div>
+  <!-- Component Loaded by Routing -->
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>&copy; REDspace Inc. All Rights Reserved.</p>
+  </div>
+</div>
+
